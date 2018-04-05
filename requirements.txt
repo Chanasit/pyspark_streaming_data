@@ -2,3 +2,4 @@ tweepy
 socket
 json
 pyspark
+matplotlib
