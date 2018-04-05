@@ -29,10 +29,10 @@ count_hashtags_order = count_hashtags.orderBy(count_hashtags['count'].desc())
 query = count_hashtags_order.writeStream.outputMode("complete").format("memory").queryName("topTagsTable").start()
 
 
-# 
+# set timeout 1 equal 1 mins
 query.awaitTermination(timeout=300)
 
-result = spark.sql("select * from topTagsTable").limit(16)
+result = spark.sql("select * from topTagsTable").limit(12)
 
 print('result:', result)
 
